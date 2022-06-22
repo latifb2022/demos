@@ -11,7 +11,7 @@ abstract class Book {
         this.author = author;
     }
     
-   // abstract void display();
+   abstract void display();
 }
 
 // Declare your class here. Do not use the 'public' access modifier.
@@ -59,6 +59,6 @@ public class AbstractExample {
         scanner.close();
 
         Book book = new MyBook(title, author, price);
-        //book.display();
+        book.display();
     }
 }

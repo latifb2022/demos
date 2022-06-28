@@ -20,7 +20,7 @@ public class JDBCConnExample {
 	    Connection connection = null;
 	    try {
 	      connection = DriverManager
-	        .getConnection("jdbc:mysql://localhost:3306/JDBCDemo", "root", "FSD-Lvc-2022");
+	        .getConnection("jdbc:mysql://localhost:3306/demos", "root", "you-password");
 	      System.out.println("SQL Connection to database established!");
 	 
 	    } catch (SQLException e) {

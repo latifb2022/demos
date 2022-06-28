@@ -14,7 +14,7 @@ public class CRUDExamples {
 	      // variables
 	      final String url = "jdbc:mysql:///demos";
 	      final String user = "root";
-	      final String password = "FSD-Lvc-2022";
+	      final String password = "your-password";
 
 	      // establish the connection
 	      Connection con = DriverManager.getConnection(url, user, password);

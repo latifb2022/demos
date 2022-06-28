@@ -19,27 +19,27 @@ public class PreparedStmtExample {
              
             scanner = new Scanner(System.in); 
             int n = 0; 
-            System.out.println("Enter no. of Person to insert"); 
+            System.out.println("Enter no. of player to insert"); 
             n = scanner.nextInt(); 
             Class.forName("com.mysql.cj.jdbc.Driver"); 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demos", "root", "FSD-Lvc-2022"); 
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demos", "root", "Your-password"); 
             if (connection != null) 
-            pstatement = connection.prepareStatement("insert into person values(?,?,?)"); 
+            pstatement = connection.prepareStatement("insert into player values(?,?,?)"); 
             if (pstatement != null) { 
                 for (int i = 1; i <= n; i++) { 
-                    System.out.println("Enter " + i + " Person Details"); 
+                    System.out.println("Enter " + i + " Player's Details"); 
                     System.out.println("Enter id : "); 
                     int id = scanner.nextInt(); 
-                    System.out.println("Enter Person Name : "); 
+                    System.out.println("Enter Player's Name : "); 
                     String name = scanner.next(); 
-                    System.out.println("Enter Person Address : "); 
-                    String address = scanner.next(); 
+                    System.out.println("Enter Player's Age : "); 
+                    String age = scanner.next(); 
                     pstatement.setInt(1, id); 
                     pstatement.setString(2, name); 
-                    pstatement.setString(3, address);  
+                    pstatement.setString(3, age);  
                     int result = pstatement.executeUpdate(); 
                     if (result == 0) { 
-                        System.out.println("Person details: are not inserted"); 
+                        System.out.println("Player's details: are not inserted"); 
                     } else { 
                         System.out.println(result + " records(s) are  inserted"); 
                     } 

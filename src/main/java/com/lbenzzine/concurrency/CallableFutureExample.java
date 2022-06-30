@@ -21,15 +21,21 @@ public class CallableFutureExample {
        		 try {
        			TimeUnit.MILLISECONDS.sleep(200);
        			 result += Math.pow(i, 2);
+       			
        		 } catch (InterruptedException ex) {
        			 throw new IllegalStateException(ex);
        		 }
        	}
+           
             return result;
         };
 
         System.out.println("Submitting Callable");
         Future<Double> future = executorService.submit(callable);
+        while(!future.isDone()) {
+            System.out.println("Task is still not done...");
+            Thread.sleep(200);
+        }
 
         // This line executes immediately
         System.out.println("Do something else while callable is getting executed");
